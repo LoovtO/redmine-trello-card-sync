@@ -1,6 +1,7 @@
 require 'redmine'
+require 'active_support/dependencies'
 
-ActionDispatch::Reloader.to_prepare do
+ActiveSupport::Reloader.to_prepare do
   require 'concerns/trello_card_sync_project_extension'
   require 'redmine_trello_card_sync/hooks'
   require 'redmine_trello_card_sync/view_hooks'
@@ -12,12 +13,12 @@ end
 
 Redmine::Plugin.register :redmine_trello_card_sync do
   name 'Trello card sync plugin'
-  author 'Hiroshi Yui'
+  author 'Sébastien Le Lourec'
   description 'Sync Redmine ticket to Trello card'
-  version '1.1.5'
-  url 'https://github.com/KKBOX/redmine-trello-card-sync/'
-  author_url 'https://ghostsinthelab.org/'
-  requires_redmine version_or_higher: '2.3.2'
+  version '2.0.0'
+  url 'https://github.com/LoovtO/redmine-trello-card-sync/'
+  author_url 'https://www.loovto.net/'
+  requires_redmine version_or_higher: '4.0.1'
 
   settings default: { public_key: '', member_token: '', api_secret: '', webhooks_url: '' }, partial: 'settings/trello_sync_settings'
 

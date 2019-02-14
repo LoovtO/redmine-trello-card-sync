@@ -1,4 +1,4 @@
-class AddTrelloExcludedTrackerFromSyncV2ToProject < ActiveRecord::Migration
+class AddTrelloExcludedTrackerFromSyncV2ToProject < ActiveRecord::Migration[5.1]
   def change
     add_column :projects, :trello_excluded_trackers_v2, :text
 

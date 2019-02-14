@@ -1,4 +1,4 @@
-class AddTrelloListMappingToProject < ActiveRecord::Migration
+class AddTrelloListMappingToProject < ActiveRecord::Migration[5.1]
   def change
     add_column :projects, :trello_list_mapping, :text
 
