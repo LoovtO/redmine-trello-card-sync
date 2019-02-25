@@ -11,6 +11,16 @@
     * Get your API key (32 characters long) & member token (64 characters long) from [here](https://trello.com/app-key), note they are *different*, one is the value of "Key", another is what you will get from the "Token" link.
 1. Restart your Redmine server to take effect.
 
+## Docker Specific
+1. Official Docker image does not allow this plugin to build. My advice : do not use this plugin with Docker.
+1. If you are using Docker and want to use this plugin, you have to
+    * Install g++ make
+    * Run setup commands.
+1. On each upgrade, you will have to
+    * Remove this plugin
+    * Install g++ make
+    * Run setup commands.
+
 ## Configuration
 
 Enable this plugin module in each project's settings -> modules page, such as `http(s)://${YOUR_REDMINE_HOST}/projects/${YOUR_PROJECT}/settings/modules`.
